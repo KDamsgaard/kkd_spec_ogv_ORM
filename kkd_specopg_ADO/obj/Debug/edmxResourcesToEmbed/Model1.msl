@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="db_hotelkaedeModelStoreContainer" CdmEntityContainer="db_hotelkaedeEntities">
+    <EntitySetMapping Name="arrangementer">
+      <EntityTypeMapping TypeName="db_hotelkaedeModel.arrangementer">
+        <MappingFragment StoreEntitySet="arrangementer">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="fra_dato" ColumnName="fra_dato" />
+          <ScalarProperty Name="varighed" ColumnName="varighed" />
+          <ScalarProperty Name="antal_deltagere" ColumnName="antal_deltagere" />
+          <ScalarProperty Name="fk_kunde" ColumnName="fk_kunde" />
+          <ScalarProperty Name="fk_hotel" ColumnName="fk_hotel" />
+          <ScalarProperty Name="fk_moedelokale" ColumnName="fk_moedelokale" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="hoteller">
+      <EntityTypeMapping TypeName="db_hotelkaedeModel.hoteller">
+        <MappingFragment StoreEntitySet="hoteller">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="navn" ColumnName="navn" />
+          <ScalarProperty Name="antal_vaerelser" ColumnName="antal_vaerelser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="kunder">
+      <EntityTypeMapping TypeName="db_hotelkaedeModel.kunder">
+        <MappingFragment StoreEntitySet="kunder">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="navn" ColumnName="navn" />
+          <ScalarProperty Name="rabat" ColumnName="rabat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ledigevaerelser">
+      <EntityTypeMapping TypeName="db_hotelkaedeModel.ledigevaerelser">
+        <MappingFragment StoreEntitySet="ledigevaerelser">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="dato" ColumnName="dato" />
+          <ScalarProperty Name="antal" ColumnName="antal" />
+          <ScalarProperty Name="fk_hotel" ColumnName="fk_hotel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="moedelokaler">
+      <EntityTypeMapping TypeName="db_hotelkaedeModel.moedelokaler">
+        <MappingFragment StoreEntitySet="moedelokaler">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nummer" ColumnName="nummer" />
+          <ScalarProperty Name="kapacitet" ColumnName="kapacitet" />
+          <ScalarProperty Name="fk_hotel" ColumnName="fk_hotel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="priser">
+      <EntityTypeMapping TypeName="db_hotelkaedeModel.priser">
+        <MappingFragment StoreEntitySet="priser">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="pris_per_dag" ColumnName="pris_per_dag" />
+          <ScalarProperty Name="fra_dato" ColumnName="fra_dato" />
+          <ScalarProperty Name="til_dato" ColumnName="til_dato" />
+          <ScalarProperty Name="fk_hotel" ColumnName="fk_hotel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="proc_udskriv_pris" FunctionName="db_hotelkaedeModel.Store.proc_udskriv_pris" />
+  </EntityContainerMapping>
+</Mapping>

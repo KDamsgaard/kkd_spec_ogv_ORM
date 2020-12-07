@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="db_hotelkaedeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="arrangementer">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fra_dato" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="varighed" Type="Int32" Nullable="false" />
+    <Property Name="antal_deltagere" Type="Int32" Nullable="false" />
+    <Property Name="fk_kunde" Type="Int32" Nullable="false" />
+    <Property Name="fk_hotel" Type="Int32" Nullable="false" />
+    <Property Name="fk_moedelokale" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="hoteller" Relationship="Self.FK__arrangeme__fk_ho__45F365D3" FromRole="arrangementer" ToRole="hoteller" />
+    <NavigationProperty Name="kunder" Relationship="Self.FK__arrangeme__fk_ku__44FF419A" FromRole="arrangementer" ToRole="kunder" />
+    <NavigationProperty Name="moedelokaler" Relationship="Self.FK__arrangeme__fk_mo__46E78A0C" FromRole="arrangementer" ToRole="moedelokaler" />
+  </EntityType>
+  <EntityType Name="hoteller">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="navn" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="antal_vaerelser" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="arrangementer" Relationship="Self.FK__arrangeme__fk_ho__45F365D3" FromRole="hoteller" ToRole="arrangementer" />
+    <NavigationProperty Name="ledigevaerelser" Relationship="Self.FK__ledigevae__fk_ho__403A8C7D" FromRole="hoteller" ToRole="ledigevaerelser" />
+    <NavigationProperty Name="moedelokaler" Relationship="Self.FK__moedeloka__fk_ho__398D8EEE" FromRole="hoteller" ToRole="moedelokaler" />
+    <NavigationProperty Name="priser" Relationship="Self.FK__priser__fk_hotel__3D5E1FD2" FromRole="hoteller" ToRole="priser" />
+  </EntityType>
+  <EntityType Name="kunder">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="navn" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="rabat" Type="Int32" />
+    <NavigationProperty Name="arrangementer" Relationship="Self.FK__arrangeme__fk_ku__44FF419A" FromRole="kunder" ToRole="arrangementer" />
+  </EntityType>
+  <EntityType Name="ledigevaerelser">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dato" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="antal" Type="Int32" Nullable="false" />
+    <Property Name="fk_hotel" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="hoteller" Relationship="Self.FK__ledigevae__fk_ho__403A8C7D" FromRole="ledigevaerelser" ToRole="hoteller" />
+  </EntityType>
+  <EntityType Name="moedelokaler">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nummer" Type="Int32" Nullable="false" />
+    <Property Name="kapacitet" Type="Int32" Nullable="false" />
+    <Property Name="fk_hotel" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="arrangementer" Relationship="Self.FK__arrangeme__fk_mo__46E78A0C" FromRole="moedelokaler" ToRole="arrangementer" />
+    <NavigationProperty Name="hoteller" Relationship="Self.FK__moedeloka__fk_ho__398D8EEE" FromRole="moedelokaler" ToRole="hoteller" />
+  </EntityType>
+  <EntityType Name="priser">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="pris_per_dag" Type="Double" Nullable="false" />
+    <Property Name="fra_dato" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="til_dato" Type="DateTime" Precision="0" />
+    <Property Name="fk_hotel" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="hoteller" Relationship="Self.FK__priser__fk_hotel__3D5E1FD2" FromRole="priser" ToRole="hoteller" />
+  </EntityType>
+  <Association Name="FK__arrangeme__fk_ho__45F365D3">
+    <End Role="hoteller" Type="Self.hoteller" Multiplicity="1" />
+    <End Role="arrangementer" Type="Self.arrangementer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="hoteller">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="arrangementer">
+        <PropertyRef Name="fk_hotel" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__arrangeme__fk_ku__44FF419A">
+    <End Role="kunder" Type="Self.kunder" Multiplicity="1" />
+    <End Role="arrangementer" Type="Self.arrangementer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="kunder">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="arrangementer">
+        <PropertyRef Name="fk_kunde" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__arrangeme__fk_mo__46E78A0C">
+    <End Role="moedelokaler" Type="Self.moedelokaler" Multiplicity="1" />
+    <End Role="arrangementer" Type="Self.arrangementer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="moedelokaler">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="arrangementer">
+        <PropertyRef Name="fk_moedelokale" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ledigevae__fk_ho__403A8C7D">
+    <End Role="hoteller" Type="Self.hoteller" Multiplicity="1" />
+    <End Role="ledigevaerelser" Type="Self.ledigevaerelser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="hoteller">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ledigevaerelser">
+        <PropertyRef Name="fk_hotel" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__moedeloka__fk_ho__398D8EEE">
+    <End Role="hoteller" Type="Self.hoteller" Multiplicity="1" />
+    <End Role="moedelokaler" Type="Self.moedelokaler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="hoteller">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="moedelokaler">
+        <PropertyRef Name="fk_hotel" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__priser__fk_hotel__3D5E1FD2">
+    <End Role="hoteller" Type="Self.hoteller" Multiplicity="1" />
+    <End Role="priser" Type="Self.priser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="hoteller">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="priser">
+        <PropertyRef Name="fk_hotel" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="db_hotelkaedeEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="arrangementer" EntityType="Self.arrangementer" />
+    <EntitySet Name="hoteller" EntityType="Self.hoteller" />
+    <EntitySet Name="kunder" EntityType="Self.kunder" />
+    <EntitySet Name="ledigevaerelser" EntityType="Self.ledigevaerelser" />
+    <EntitySet Name="moedelokaler" EntityType="Self.moedelokaler" />
+    <EntitySet Name="priser" EntityType="Self.priser" />
+    <AssociationSet Name="FK__arrangeme__fk_ho__45F365D3" Association="Self.FK__arrangeme__fk_ho__45F365D3">
+      <End Role="hoteller" EntitySet="hoteller" />
+      <End Role="arrangementer" EntitySet="arrangementer" />
+    </AssociationSet>
+    <AssociationSet Name="FK__arrangeme__fk_ku__44FF419A" Association="Self.FK__arrangeme__fk_ku__44FF419A">
+      <End Role="kunder" EntitySet="kunder" />
+      <End Role="arrangementer" EntitySet="arrangementer" />
+    </AssociationSet>
+    <AssociationSet Name="FK__arrangeme__fk_mo__46E78A0C" Association="Self.FK__arrangeme__fk_mo__46E78A0C">
+      <End Role="moedelokaler" EntitySet="moedelokaler" />
+      <End Role="arrangementer" EntitySet="arrangementer" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ledigevae__fk_ho__403A8C7D" Association="Self.FK__ledigevae__fk_ho__403A8C7D">
+      <End Role="hoteller" EntitySet="hoteller" />
+      <End Role="ledigevaerelser" EntitySet="ledigevaerelser" />
+    </AssociationSet>
+    <AssociationSet Name="FK__moedeloka__fk_ho__398D8EEE" Association="Self.FK__moedeloka__fk_ho__398D8EEE">
+      <End Role="hoteller" EntitySet="hoteller" />
+      <End Role="moedelokaler" EntitySet="moedelokaler" />
+    </AssociationSet>
+    <AssociationSet Name="FK__priser__fk_hotel__3D5E1FD2" Association="Self.FK__priser__fk_hotel__3D5E1FD2">
+      <End Role="hoteller" EntitySet="hoteller" />
+      <End Role="priser" EntitySet="priser" />
+    </AssociationSet>
+    <FunctionImport Name="proc_udskriv_pris">
+      <Parameter Name="booking_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+</Schema>

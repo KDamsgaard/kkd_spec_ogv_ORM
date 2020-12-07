@@ -1,0 +1,12 @@
+C:\code\kkd_spec_opg_ORM\kkd_specopg_ADO\bin\Debug\kkd_specopg_ADO.exe.config
+C:\code\kkd_spec_opg_ORM\kkd_specopg_ADO\bin\Debug\kkd_specopg_ADO.exe
+C:\code\kkd_spec_opg_ORM\kkd_specopg_ADO\bin\Debug\kkd_specopg_ADO.pdb
+C:\code\kkd_spec_opg_ORM\kkd_specopg_ADO\bin\Debug\EntityFramework.dll
+C:\code\kkd_spec_opg_ORM\kkd_specopg_ADO\bin\Debug\EntityFramework.SqlServer.dll
+C:\code\kkd_spec_opg_ORM\kkd_specopg_ADO\bin\Debug\EntityFramework.xml
+C:\code\kkd_spec_opg_ORM\kkd_specopg_ADO\bin\Debug\EntityFramework.SqlServer.xml
+C:\code\kkd_spec_opg_ORM\kkd_specopg_ADO\obj\Debug\kkd_specopg_ADO.csprojAssemblyReference.cache
+C:\code\kkd_spec_opg_ORM\kkd_specopg_ADO\obj\Debug\kkd_specopg_ADO.csproj.CoreCompileInputs.cache
+C:\code\kkd_spec_opg_ORM\kkd_specopg_ADO\obj\Debug\kkd_specopg_ADO.csproj.CopyComplete
+C:\code\kkd_spec_opg_ORM\kkd_specopg_ADO\obj\Debug\kkd_specopg_ADO.exe
+C:\code\kkd_spec_opg_ORM\kkd_specopg_ADO\obj\Debug\kkd_specopg_ADO.pdb

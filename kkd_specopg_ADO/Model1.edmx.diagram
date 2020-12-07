@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8170e08e402540be9e4f5b57a15a6e5e" Name="Diagram1">
+        <EntityTypeShape EntityType="db_hotelkaedeModel.arrangementer" Width="1.5" PointX="2.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_hotelkaedeModel.hoteller" Width="1.5" PointX="0.5" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_hotelkaedeModel.kunder" Width="1.5" PointX="2.5" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_hotelkaedeModel.ledigevaerelser" Width="1.5" PointX="2.5" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_hotelkaedeModel.moedelokaler" Width="1.5" PointX="0.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_hotelkaedeModel.priser" Width="1.5" PointX="0.625" PointY="6.375" IsExpanded="true" />
+        <AssociationConnector Association="db_hotelkaedeModel.FK__arrangeme__fk_ho__45F365D3" ManuallyRouted="false" />
+        <AssociationConnector Association="db_hotelkaedeModel.FK__arrangeme__fk_ku__44FF419A" ManuallyRouted="false" />
+        <AssociationConnector Association="db_hotelkaedeModel.FK__arrangeme__fk_mo__46E78A0C" ManuallyRouted="false" />
+        <AssociationConnector Association="db_hotelkaedeModel.FK__ledigevae__fk_ho__403A8C7D" ManuallyRouted="false" />
+        <AssociationConnector Association="db_hotelkaedeModel.FK__moedeloka__fk_ho__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="db_hotelkaedeModel.FK__priser__fk_hotel__3D5E1FD2" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

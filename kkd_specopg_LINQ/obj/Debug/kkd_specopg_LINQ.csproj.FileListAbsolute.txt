@@ -1,0 +1,12 @@
+C:\code\kkd_spec_opg_ORM\kkd_specopg_LINQ\bin\Debug\kkd_specopg_LINQ.exe.config
+C:\code\kkd_spec_opg_ORM\kkd_specopg_LINQ\bin\Debug\kkd_specopg_LINQ.exe
+C:\code\kkd_spec_opg_ORM\kkd_specopg_LINQ\bin\Debug\kkd_specopg_LINQ.pdb
+C:\code\kkd_spec_opg_ORM\kkd_specopg_LINQ\bin\Debug\EntityFramework.dll
+C:\code\kkd_spec_opg_ORM\kkd_specopg_LINQ\bin\Debug\EntityFramework.SqlServer.dll
+C:\code\kkd_spec_opg_ORM\kkd_specopg_LINQ\bin\Debug\EntityFramework.xml
+C:\code\kkd_spec_opg_ORM\kkd_specopg_LINQ\bin\Debug\EntityFramework.SqlServer.xml
+C:\code\kkd_spec_opg_ORM\kkd_specopg_LINQ\obj\Debug\kkd_specopg_LINQ.csprojAssemblyReference.cache
+C:\code\kkd_spec_opg_ORM\kkd_specopg_LINQ\obj\Debug\kkd_specopg_LINQ.csproj.CoreCompileInputs.cache
+C:\code\kkd_spec_opg_ORM\kkd_specopg_LINQ\obj\Debug\kkd_specopg_LINQ.csproj.CopyComplete
+C:\code\kkd_spec_opg_ORM\kkd_specopg_LINQ\obj\Debug\kkd_specopg_LINQ.exe
+C:\code\kkd_spec_opg_ORM\kkd_specopg_LINQ\obj\Debug\kkd_specopg_LINQ.pdb
